@@ -1,0 +1,33 @@
+stages:
+  ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+    - src/data_ingestion.py
+    outs:
+    - data/raw/data.csv
+  preprocessing:
+    cmd: python src/data_preprocessing.py
+    deps:
+    - data/raw/data.csv
+    - src/data_preprocessing.py
+    outs:
+    - data/processed/processed.csv
+  training:
+    cmd: python src/train.py
+    deps:
+    - data/processed/processed.csv
+    - params.yaml
+    - src/train.py
+    outs:
+    - model.pkl
+  evaluation:
+    cmd: python src/evaluate.py
+    deps:
+    - data/processed/processed.csv
+    - model.pkl
+    - src/evaluate.py
+    metrics:
+    - metrics.txt:
+        cache: false
+params:
+- dvclive/params.yaml

@@ -12,23 +12,20 @@ This is a **simple ML pipeline project** demonstrating how to use
 ---
 
 ## 📂 Project Structure
+
 dvc_experiment_tracking/
-│── data/
-│ ├── raw/ # Raw dataset (data.csv)
-│ └── processed/ # Preprocessed dataset
-│
-│── src/
-│ ├── ingestion.py # Step 1: Load raw data
-│ ├── preprocess.py # Step 2: Preprocess data
-│ ├── train.py # Step 3: Train model
-│ └── init.py
-│
-│── dvc.yaml # DVC pipeline definition
-│── params.yaml # Hyperparameters (lr, n_estimators, etc.)
-│── dvc.lock # Pipeline lock file
-│── README.md # Project documentation
-│── .gitignore
-│── .dvcignore
+├── data/
+│ ├── raw/
+│ │ └── data.csv
+│ └── processed/
+├── src/
+│ ├── ingest.py
+│ ├── preprocess.py
+│ └── train.py
+├── dvc.yaml
+├── params.yaml
+├── template.py
+└── README.md
 
 
 ---

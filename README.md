@@ -124,4 +124,4 @@ Feel free to fork, create issues, or submit pull requests 🚀
 
 MIT License © 2025  
 
-Do you want me to also include some **badges (like Python, DVC, VS Code)** at the top of the README to make it even more beautiful?
+
